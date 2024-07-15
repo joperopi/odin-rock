@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <script src="js/script.js"></script>
-</head>
-<body>
-    <h1>This is a placeholder text, I'll add something else here later</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rock Paper Scissors</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                max-width: 600px;
+                background-color: lightgray;
+                padding: 20px;
+                border-radius: 20px;
+                box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2)
+            }
+            h1 {
+                font-size: 50px;
+                margin: 0px;
+            }
+            .images {
+                display: flex;
+                gap: 10px;
+                justify-content: center;
+            }
+            .subtxt {
+                font-size: 25px;
+            }
+        </style>
+        <script src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="content">
+            <div class="titletxt">
+                <h1>Thank you for playing<br>Rock Paper Scissors!</h1>
+            </div>
+            <div class="images">
+                <img src="img/rock.png" alt="rock">
+                <img src="img/paper.png" alt="paper">
+                <img src="img/scissor.png" alt="scissors">
+            </div>
+            <div class="subtxt">
+                <p>Congratulations for the big rock paper scissors win! Or sorry for the heart wrenching loss, this page doesn't actually know if you won or lost, because there's no GUI yet!</p>
+            </div>
+        </div>
+    </body>
 </html>
