@@ -2,6 +2,8 @@ console.log("RECON CRAFT(JS File) CHECKING FOR CONNECTION (Console.logging) WITH
 
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice = "";
+let computerChoice = "";
 
 function getComputerChoice(){
     let computerChoice = "";
@@ -37,3 +39,33 @@ function playRound(humanChoice, computerChoice) {
         return computerScore++;
     }
 }
+/*
+function playGame() {
+    for (let round = 1; round <= 5; round ++) {
+        console.log(`Round ${round}`);
+        getHumanChoice();
+        getComputerChoice();
+        console.log(`The computer chooses: ${computerChoice}`);
+        playRound(humanChoice,computerChoice);
+        console.log(`Your score: ${humanScore}`);
+        console.log(`Computer's score: ${computerScore}`);
+        if (round === 5) {
+            if (humanScore === computerScore) {
+                console.log(`You won ${humanScore} time(s)`);
+                console.log(`The computer won ${computerScore} time(s)`);
+                console.log("It's a tie!")
+            } else if (humanScore > computerScore) {
+                console.log(`You won ${humanScore} time(s)`);
+                console.log(`The computer won ${computerScore} time(s)`);
+                console.log("You win!")
+            } else {
+                console.log(`You won ${humanScore} time(s)`);
+                console.log(`The computer won ${computerScore} time(s)`);
+                console.log("You lose :(")
+            }
+        }
+    }
+}
+
+playGame();
+*/
