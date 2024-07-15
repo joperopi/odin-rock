@@ -12,3 +12,11 @@ function getComputerChoice(){
     }
     return computerChoice;
 }
+
+function getHumanChoice() {
+    humanChoice = prompt(`Please write "Rock", "Paper" or "Scissors"\n(Please double check the spelling, your choice will default to "Rock" if it's spelled incorrectly)`).toLowerCase();
+    if(humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors") {
+        humanChoice = "rock";
+    }
+    return humanChoice;
+}
