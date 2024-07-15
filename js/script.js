@@ -52,8 +52,9 @@ function getHumanChoice() {
 /*
 This is the round play function. My first attempt checked for a tie, then checked for every other
 possible option individually in several if else statements. After some thinking, I realized there
-can only be a tie and three situations where the player wins, everything else doesn't really matter,
-so I wrote the code again to reflect that change.
+can only be a tie and three situations where the player wins, in all remaining situations the
+computer wins, so I reduced the options to match this revelation. This day will be remembered as
+the day I optimized code for the first time. Yippie!
 */
 
 function playRound(humanChoice, computerChoice) {
