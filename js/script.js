@@ -2,11 +2,10 @@ console.log("RECON CRAFT(JS File) CHECKING FOR CONNECTION (Console.logging) WITH
 
 let humanScore = 0;
 let computerScore = 0;
-let humanChoice = "";
-let computerChoice = "";
+let humanChoice;
+let computerChoice;
 
 function getComputerChoice(){
-    let computerChoice = "";
     randomNum = Math.random()
     if (randomNum <= 0.333) {
         computerChoice = "rock";
@@ -39,7 +38,7 @@ function playRound(humanChoice, computerChoice) {
         return computerScore++;
     }
 }
-/*
+
 function playGame() {
     for (let round = 1; round <= 5; round ++) {
         console.log(`Round ${round}`);
@@ -68,4 +67,3 @@ function playGame() {
 }
 
 playGame();
-*/
