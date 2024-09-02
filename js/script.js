@@ -82,6 +82,8 @@ rather than getting stuck and frustrated in this one issue that can be so easily
 from the next one or two lessons. Better to save up the brain cells for the learning that is yet to
 come, and come back to this project when I feel more prepared to tackle it.
 */
+// plays 5 rounds
+/*
 function playGame() {
     for (let round = 1; round <= 5; round ++) {
         console.log(`Round ${round}`);
@@ -108,5 +110,6 @@ function playGame() {
         }
     }
 }
+*/
 
-playGame();
+// playGame();
