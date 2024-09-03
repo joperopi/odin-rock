@@ -13,6 +13,7 @@ body {
     text-align: center;
     font-family: "Comic Neue", cursive;
 }
+
 .content {
     display: flex;
     flex-direction: column;
@@ -21,12 +22,15 @@ body {
     background-color: lightgray;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2)
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px;
 }
+
 h1 {
     font-size: 50px;
     margin: 0px;
 }
+
 .game,
 #buttons {
     display: flex;
@@ -48,6 +52,7 @@ h1 {
     width: 160px;
     height: 50px;
     font-size: 25px;
+    border-radius: 8px;
 }
 
 .subtxt {
