@@ -23,6 +23,16 @@ h1 {
     gap: 10px;
     justify-content: center;
 }
+
+#score {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
 .subtxt {
     font-size: 25px;
 }
