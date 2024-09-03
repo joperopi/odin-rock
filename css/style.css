@@ -55,6 +55,7 @@ h1 {
     cursor: pointer;
 }
 
-.subtxt {
+.subtxt p,
+.playarea p {
     font-size: 25px;
 }
