@@ -5,6 +5,8 @@ let computerScore = 0;
 let humanChoice;
 let computerChoice;
 
+const playerSelect = document.getElementById("buttons");
+
 
 function getComputerChoice(){
     randomNum = Math.random()
@@ -26,6 +28,21 @@ function getHumanChoice() {
     }
     return humanChoice;
 }
+
+playerSelect.addEventListener("click", function(e){
+    let itemNum = e.target.classList[1];
+    itemNum = itemNum.replace(/[^0-9]/g,"");
+    console.log(itemNum);
+    if (itemNum == 1) {
+        humanChoice = "rock";
+    } else if (itemNum == 2) {
+        humanChoice = "paper";
+    } else {
+        humanChoice = "scissors";
+    }
+    console.log(humanChoice);
+    return humanChoice;
+});
 
 
 function playRound(humanChoice, computerChoice) {
