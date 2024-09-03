@@ -53,6 +53,7 @@ h1 {
     height: 50px;
     font-size: 25px;
     border-radius: 8px;
+    cursor: pointer;
 }
 
 .subtxt {
