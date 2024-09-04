@@ -11,6 +11,8 @@ const txtPlay = document.getElementById("txtplay");
 const btnPlay = document.getElementById("btnplay");
 const guy = document.getElementById("guy");
 const bot = document.getElementById("bot");
+const playerScoreboard = document.getElementById("playerScoreboard");
+const computerScoreboard = document.getElementById("computerScoreboard");
 
 
 function getComputerChoice(){
@@ -23,15 +25,6 @@ function getComputerChoice(){
         computerChoice = "paper";
     }
     return computerChoice;
-};
-
-
-function getHumanChoice() {
-    humanChoice = prompt(`Please write "Rock", "Paper" or "Scissors"\n(Please double check the spelling, your choice will default to "Rock" if it's spelled incorrectly)`).toLowerCase();
-    if(humanChoice != "rock" && humanChoice != "paper" && humanChoice != "scissors") {
-        humanChoice = "rock";
-    }
-    return humanChoice;
 };
 
 playerSelect.addEventListener("click", function(e){
@@ -48,34 +41,48 @@ playerSelect.addEventListener("click", function(e){
     return humanChoice;
 });
 
-
-function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-        txtPlay.Play.innerText = `You and the computer chose ${humanChoice}! It's a tie!`;
-        guy.style.content = `url("img/rps-guy-neutral.png")`;
-        bot.style.content = `url("img/rps-bot-neutral.png")`;
-    } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
-    (humanChoice === "paper" && computerChoice === "rock") ||
-    (humanChoice === "scissors" && computerChoice === "paper")) {
-        txtPlay.Play.innerText = `${humanChoice} beats ${computerChoice}! You win!`;
-        guy.style.content = `url("img/rps-guy-happy.png")`;
-        bot.style.content = `url("img/rps-bot-sad.png")`;
-        return humanScore++;
-    } else {
-        txtPlay.Play.innerText = `${computerChoice} beats ${humanChoice}! You lose!`;
-        guy.style.content = `url("img/rps-guy-sad.png")`;
-        bot.style.content = `url("img/rps-bot-happy.png")`;
-        return computerScore++;
-    }
-};
-
 btnPlay.addEventListener("click", function(e){
     getComputerChoice();
     if (humanChoice === "") {
         txtPlay.innerText = "Please pick one of the options!";
     } else if (humanChoice != "") {
-        playRound();
+        if (humanChoice === computerChoice) {
+            txtPlay.style.innerText = `You and the computer chose ${humanChoice}! It's a tie!`;
+            guy.style.content = `url("img/rps-guy-neutral.png")`;
+            bot.style.content = `url("img/rps-bot-neutral.png")`;
+        } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "paper" && computerChoice === "rock") ||
+        (humanChoice === "scissors" && computerChoice === "paper")) {
+            txtPlay.innerText = `${humanChoice} beats ${computerChoice}! You win!`;
+            guy.style.content = `url("img/rps-guy-happy.png")`;
+            bot.style.content = `url("img/rps-bot-sad.png")`;
+            return humanScore++;
+        } else {
+            txtPlay.innerText = `${computerChoice} beats ${humanChoice}! You lose!`;
+            guy.style.content = `url("img/rps-guy-sad.png")`;
+            bot.style.content = `url("img/rps-bot-happy.png")`;
+            return computerScore++;
+        }
+        ++roundNum;
+        playerScoreboard.textContent = humanScore;
+        computerScoreboard.textContent = computerScore;
+        if (roundNum === 5) {
+            if (humanScore === computerScore) {
+                txtPlay.innerText = `You and the computer have the same score! It's a tie! Press the play button to start again.`;
+                guy.style.content = `url("img/rps-guy-neutral.png")`;
+                bot.style.content = `url("img/rps-bot-neutral.png")`;
+            } else if (humanScore > computerScore) {
+                txtPlay.innerText = `You scored more, so you win! Press the play button to start again.`;
+                guy.style.content = `url("img/rps-guy-win.png")`;
+                bot.style.content = `url("img/rps-bot-sad.png")`;          
+            } else {
+                txtPlay.innerText = `The computer scored more, you lose! Press the play button to start again.`;
+                guy.style.content = `url("img/rps-guy-sad.png")`;
+                bot.style.content = `url("img/rps-bot-win.png")`;                  
+            }
+        }
     }
+    console.log("round number: ", roundNum);
 
 });
 
