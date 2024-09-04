@@ -13,6 +13,7 @@ const guy = document.getElementById("guy");
 const bot = document.getElementById("bot");
 const playerScoreboard = document.getElementById("playerScoreboard");
 const computerScoreboard = document.getElementById("computerScoreboard");
+const roundPage = document.getElementById("roundPage");
 
 
 function getComputerChoice(){
@@ -52,6 +53,7 @@ function reset() {
     txtPlay.innerText = "Please pick one of the options!";
     guy.style.content = `url("img/rps-guy-neutral.png")`;
     bot.style.content = `url("img/rps-bot-neutral.png")`;
+    roundPage.innerText = `Round 0`;
     playerScoreboard.textContent = humanScore;
     computerScoreboard.textContent = computerScore;
 
@@ -80,7 +82,10 @@ btnPlay.addEventListener("click", function(e){
             computerScore++;
         }     
         ++roundNum;
-        console.log("round number went up");
+        console.log("round number: ", roundNum);
+        console.log("player choice: ", humanChoice);
+        console.log("computer choice: ", computerChoice);
+        roundPage.innerText = `Round ${roundNum}`;
         playerScoreboard.textContent = humanScore;
         computerScoreboard.textContent = computerScore;
         if (roundNum === 5) {
@@ -101,8 +106,6 @@ btnPlay.addEventListener("click", function(e){
             reset();
         }
     }
-    console.log("round number: ", roundNum);
-
 });
 
 // plays 5 rounds
