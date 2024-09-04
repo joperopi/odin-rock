@@ -50,7 +50,7 @@ function reset() {
     for(const child of playerSelect.children) {
         child.style.backgroundColor="white";
     }
-    txtPlay.innerText = "Please pick one of the options!";
+    txtPlay.innerText = "Pick one of the options!";
     guy.style.content = `url("img/rps-guy-neutral.png")`;
     bot.style.content = `url("img/rps-bot-neutral.png")`;
     roundPage.innerText = `Round 0`;
