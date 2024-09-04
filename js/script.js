@@ -2,10 +2,12 @@ console.log("RECON CRAFT(JS File) CHECKING FOR CONNECTION (Console.logging) WITH
 
 let humanScore = 0;
 let computerScore = 0;
-let humanChoice;
-let computerChoice;
+let humanChoice = "";
+let computerChoice = "";
 
 const playerSelect = document.getElementById("buttons");
+const txtPlay = document.getElementById("txtplay");
+const btnPlay = document.getElementById("btnplay");
 
 
 function getComputerChoice(){
@@ -30,16 +32,16 @@ function getHumanChoice() {
 }
 
 playerSelect.addEventListener("click", function(e){
-    let itemNum = e.target.classList[1];
-    itemNum = itemNum.replace(/[^0-9]/g,"");
-    console.log(itemNum);
-    if (itemNum == 1) {
-        humanChoice = "rock";
-    } else if (itemNum == 2) {
-        humanChoice = "paper";
-    } else {
-        humanChoice = "scissors";
+    for(const child of playerSelect.children) {
+        child.style.backgroundColor="white";
     }
+    if (e.target.innerText.length > 8) {
+        humanChoice = "";
+    } else {
+        humanChoice = e.target.innerText.toLowerCase();
+        e.target.style.backgroundColor="lightslategray";
+    }
+    //e.target.style.backgroundColor="lightslategray"; // fix background changing color when clicked
     console.log(humanChoice);
     return humanChoice;
 });
