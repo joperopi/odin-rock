@@ -56,14 +56,15 @@ btnPlay.addEventListener("click", function(e){
             txtPlay.innerText = `${humanChoice} beats ${computerChoice}! You win!`;
             guy.style.content = `url("img/rps-guy-happy.png")`;
             bot.style.content = `url("img/rps-bot-sad.png")`;
-            return humanScore++;
+            humanScore++;
         } else {
             txtPlay.innerText = `${computerChoice} beats ${humanChoice}! You lose!`;
             guy.style.content = `url("img/rps-guy-sad.png")`;
             bot.style.content = `url("img/rps-bot-happy.png")`;
-            return computerScore++;
-        }
+            computerScore++;
+        }     
         ++roundNum;
+        console.log("round number went up");
         playerScoreboard.textContent = humanScore;
         computerScoreboard.textContent = computerScore;
         if (roundNum === 5) {
