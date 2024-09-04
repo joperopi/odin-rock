@@ -41,7 +41,6 @@ playerSelect.addEventListener("click", function(e){
         humanChoice = e.target.innerText.toLowerCase();
         e.target.style.backgroundColor="lightslategray";
     }
-    console.log(humanChoice);
     return humanChoice;
 });
 
@@ -84,9 +83,6 @@ btnPlay.addEventListener("click", function(e){
             computerScore++;
         }     
         ++roundNum;
-        console.log("round number: ", roundNum);
-        console.log("player choice: ", humanChoice);
-        console.log("computer choice: ", computerChoice);
         roundPage.innerText = `Round ${roundNum}`;
         playerScoreboard.textContent = humanScore;
         computerScoreboard.textContent = computerScore;
