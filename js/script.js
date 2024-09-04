@@ -65,7 +65,7 @@ btnPlay.addEventListener("click", function(e){
         txtPlay.innerText = "Please pick one of the options!";
     } else if (humanChoice != "") {
         if (humanChoice === computerChoice) {
-            txtPlay.style.innerText = `You and the computer chose ${humanChoice}! It's a tie!`;
+            txtPlay.innerText = `You and the computer chose ${humanChoice}! It's a tie!`;
             guy.style.content = `url("img/rps-guy-neutral.png")`;
             bot.style.content = `url("img/rps-bot-neutral.png")`;
         } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
