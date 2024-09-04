@@ -8,6 +8,8 @@ let computerChoice = "";
 const playerSelect = document.getElementById("buttons");
 const txtPlay = document.getElementById("txtplay");
 const btnPlay = document.getElementById("btnplay");
+const guy = document.getElementById("guy");
+const bot = document.getElementById("bot");
 
 
 function getComputerChoice(){
@@ -41,7 +43,6 @@ playerSelect.addEventListener("click", function(e){
         humanChoice = e.target.innerText.toLowerCase();
         e.target.style.backgroundColor="lightslategray";
     }
-    //e.target.style.backgroundColor="lightslategray"; // fix background changing color when clicked
     console.log(humanChoice);
     return humanChoice;
 });
@@ -49,17 +50,33 @@ playerSelect.addEventListener("click", function(e){
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
-        console.log(`You and the computer chose ${humanChoice}! It's a tie!`);
+        txtPlay.Play.innerText = `You and the computer chose ${humanChoice}! It's a tie!`;
+        guy.style.content = `url("img/rps-guy-neutral.png")`;
+        bot.style.content = `url("img/rps-bot-neutral.png")`;
     } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
     (humanChoice === "paper" && computerChoice === "rock") ||
     (humanChoice === "scissors" && computerChoice === "paper")) {
-        console.log(`${humanChoice} beats ${computerChoice}! You win!`);
+        txtPlay.Play.innerText = `${humanChoice} beats ${computerChoice}! You win!`;
+        guy.style.content = `url("img/rps-guy-happy.png")`;
+        bot.style.content = `url("img/rps-bot-sad.png")`;
         return humanScore++;
     } else {
-        console.log(`${computerChoice} beats ${humanChoice}! You lose!`);
+        txtPlay.Play.innerText = `${computerChoice} beats ${humanChoice}! You lose!`;
+        guy.style.content = `url("img/rps-guy-sad.png")`;
+        bot.style.content = `url("img/rps-bot-happy.png")`;
         return computerScore++;
     }
 };
+
+btnPlay.addEventListener("click", function(e){
+    getComputerChoice();
+    if (humanChoice === "") {
+        txtPlay.innerText = "Please pick one of the options!";
+    } else if (humanChoice != "") {
+        playRound();
+    }
+    
+});
 
 // plays 5 rounds
 /*
