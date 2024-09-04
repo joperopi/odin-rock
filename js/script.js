@@ -41,6 +41,22 @@ playerSelect.addEventListener("click", function(e){
     return humanChoice;
 });
 
+function reset() {
+    roundNum = 0;
+    humanScore = 0;
+    computerScore = 0;
+    humanChoice = "";
+    for(const child of playerSelect.children) {
+        child.style.backgroundColor="white";
+    }
+    txtPlay.innerText = "Please pick one of the options!";
+    guy.style.content = `url("img/rps-guy-neutral.png")`;
+    bot.style.content = `url("img/rps-bot-neutral.png")`;
+    playerScoreboard.textContent = humanScore;
+    computerScoreboard.textContent = computerScore;
+
+}
+
 btnPlay.addEventListener("click", function(e){
     getComputerChoice();
     if (humanChoice === "") {
@@ -75,12 +91,14 @@ btnPlay.addEventListener("click", function(e){
             } else if (humanScore > computerScore) {
                 txtPlay.innerText = `You scored more, so you win! Press the play button to start again.`;
                 guy.style.content = `url("img/rps-guy-win.png")`;
-                bot.style.content = `url("img/rps-bot-sad.png")`;          
+                bot.style.content = `url("img/rps-bot-sad.png")`;
             } else {
                 txtPlay.innerText = `The computer scored more, you lose! Press the play button to start again.`;
                 guy.style.content = `url("img/rps-guy-sad.png")`;
-                bot.style.content = `url("img/rps-bot-win.png")`;                  
+                bot.style.content = `url("img/rps-bot-win.png")`;
             }
+        } else if (roundNum === 6) {
+            reset();
         }
     }
     console.log("round number: ", roundNum);
