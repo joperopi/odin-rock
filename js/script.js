@@ -15,6 +15,10 @@ const playerScoreboard = document.getElementById("playerScoreboard");
 const computerScoreboard = document.getElementById("computerScoreboard");
 const roundPage = document.getElementById("roundPage");
 
+function capitalize(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function getComputerChoice(){
     randomNum = Math.random()
     if (randomNum <= 0.333) {
@@ -69,12 +73,12 @@ btnPlay.addEventListener("click", function(e){
         } else if ((humanChoice === "rock" && computerChoice === "scissors") ||
         (humanChoice === "paper" && computerChoice === "rock") ||
         (humanChoice === "scissors" && computerChoice === "paper")) {
-            txtPlay.innerText = `${humanChoice} beats ${computerChoice}! You win!`;
+            txtPlay.innerText = `${capitalize(humanChoice)} beats ${computerChoice}! You win!`;
             guy.style.content = `url("img/rps-guy-happy.png")`;
             bot.style.content = `url("img/rps-bot-sad.png")`;
             humanScore++;
         } else {
-            txtPlay.innerText = `${computerChoice} beats ${humanChoice}! You lose!`;
+            txtPlay.innerText = `${capitalize(computerChoice)} beats ${humanChoice}! You lose!`;
             guy.style.content = `url("img/rps-guy-sad.png")`;
             bot.style.content = `url("img/rps-bot-happy.png")`;
             computerScore++;
