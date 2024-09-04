@@ -1,5 +1,6 @@
 console.log("RECON CRAFT(JS File) CHECKING FOR CONNECTION (Console.logging) WITH MOTHERSHIP (HTML File)")
 
+let roundNum = 0;
 let humanScore = 0;
 let computerScore = 0;
 let humanChoice = "";
@@ -75,7 +76,7 @@ btnPlay.addEventListener("click", function(e){
     } else if (humanChoice != "") {
         playRound();
     }
-    
+
 });
 
 // plays 5 rounds
