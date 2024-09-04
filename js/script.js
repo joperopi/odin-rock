@@ -20,7 +20,7 @@ function getComputerChoice(){
         computerChoice = "paper";
     }
     return computerChoice;
-}
+};
 
 
 function getHumanChoice() {
@@ -29,7 +29,7 @@ function getHumanChoice() {
         humanChoice = "rock";
     }
     return humanChoice;
-}
+};
 
 playerSelect.addEventListener("click", function(e){
     for(const child of playerSelect.children) {
@@ -59,7 +59,7 @@ function playRound(humanChoice, computerChoice) {
         console.log(`${computerChoice} beats ${humanChoice}! You lose!`);
         return computerScore++;
     }
-}
+};
 
 // plays 5 rounds
 /*
