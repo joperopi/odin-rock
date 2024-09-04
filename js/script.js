@@ -15,7 +15,6 @@ const playerScoreboard = document.getElementById("playerScoreboard");
 const computerScoreboard = document.getElementById("computerScoreboard");
 const roundPage = document.getElementById("roundPage");
 
-
 function getComputerChoice(){
     randomNum = Math.random()
     if (randomNum <= 0.333) {
@@ -56,7 +55,6 @@ function reset() {
     roundPage.innerText = `Round 0`;
     playerScoreboard.textContent = humanScore;
     computerScoreboard.textContent = computerScore;
-
 }
 
 btnPlay.addEventListener("click", function(e){
